@@ -72,3 +72,8 @@
 
 6. write code for the JWT by adding 2 methods access token and refresh token in userSchema
 
+## 5. File upload usiong multer and cloudinary.
+1. install packages `npm i multer cloudinary` then write the code in new file cloudinary.js in utils also add all the env varialbles in .env file. 
+    - this cloudinary.js is for uploading file form the server to the cloudinary.
+    
+2. then create a m
