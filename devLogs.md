@@ -81,4 +81,13 @@
 
     - this while process is a single process of uploading file form client to server and server to cloudinary.
 
-## 6. 
+## 6. Routes and Controllers
+1. write a controller skeliton for the userRegister in asyncHandler higher order functon by creating a file `controllers/users.controller.js`
+
+2. create a `routes/users.routes.js` file for users routes and using controllers and add router for `/regiser` with only testing code.
+
+3. then in `app.js` create a standard api route `/api/v1/users` that invoke the usersRoutes from the `users.routes.js` 
+
+4. then test if the post route at `http://localhost:8000/api/v1/users/register` works using postman.
+
+## 7. 

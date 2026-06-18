@@ -16,8 +16,16 @@ app.use(express.urlencoded({extended: true, limit: "16kb"})); // to parse URL-en
 app.use(express.static("public")); // to serve static files from the "public" directory
 app.use(cookieParser()); // to parse cookies from incoming requests
 
+// import routes
+import usersRoutes from "./routes/users.routes.js";
+
+// routes declaration
+app.use("/api/v1/users", usersRoutes);
+
 app.get("/", (req, res) => {
     res.send("Welcome to VideoTube Backend!");
 });
 
-export default app;
+
+
+export { app };
