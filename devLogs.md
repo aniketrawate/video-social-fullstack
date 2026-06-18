@@ -75,5 +75,10 @@
 ## 5. File upload usiong multer and cloudinary.
 1. install packages `npm i multer cloudinary` then write the code in new file cloudinary.js in utils also add all the env varialbles in .env file. 
     - this cloudinary.js is for uploading file form the server to the cloudinary.
+    - wrote code for file upload from server public/temp folder
     
-2. then create a m
+2. then created a middleware file `multer.middleware.js` which uploades the file form the client to the server in the public/temp folder to upload at cloudinary.
+
+    - this while process is a single process of uploading file form client to server and server to cloudinary.
+
+## 6. 
