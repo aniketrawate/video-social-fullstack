@@ -11,7 +11,8 @@ cloudinary.config({
 // i think here is this function is logical error.
 // we are deleting the file form the server if it fail to upload to the cloudinary.
 // and if it upload successfully then we are not deleting the file form the server.
-// i think we should delete file in both cases if upload is failed and upload is successfull. 
+// i think we should delete file in both cases if upload is failed and upload is successfull.
+// cause the whole prcess is happning in one https request and we are uploading file to the server and then uploading file to the cloudinary and then deleting file from the server.
 const uploadOnCloudinary = async (localFilePath) => {
     try {
         // check if file path is valid
