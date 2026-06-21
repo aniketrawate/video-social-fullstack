@@ -90,4 +90,25 @@
 
 4. then test if the post route at `http://localhost:8000/api/v1/users/register` works using postman.
 
-## 7. 
+## 7. Logic Building - Register Controller
+
+1. we are building full user Register Controller for that we need to do following steps in file `users.constollers.js`
+    - get required user data from frontend ie postman for now.
+    - validate the data. at least check if the required fields are present and valid.
+    - check if user already exists in the database. if yes, return "usser already exists" error.
+    - check for images and avatar are available in the request. 
+    - upload the avatar to cloudinary and get the url of the uploaded image.
+    - create a new user object with the data and the avatar url to store in MongoDB.
+    - remove password and refreshToken from the user object before sending it to the frontend.
+    - check if the user is created successfully in the database. if yes, return the user object to the frontend with a success message. else error message.
+    - return response.
+
+    1 - checked if api is working using postman
+    2 - wrote validation for the fullName, username, email, password.
+    3 - Checked if user exitst or not.
+    4 - checked for avatar is in request
+    5 - uploaded the avatar and coverImage to coudinary form server and get the url of it.
+    6 - created new user object wht data and avatar and coverImage url to store in MongoDB.
+    7 - removed the password and refreshToken from the user Object in response before sending to frontend.
+    8 - check above response in server if the user is created or not before sending to frontend.
+    9 - sent response to frontend using the `apiResponseHandler.js` handler for api request with user object without password and refresh toke.

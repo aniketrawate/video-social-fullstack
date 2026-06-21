@@ -30,11 +30,11 @@ const userSchema = new mongoose.Schema(
             required: true
         },
         coverImage: {
-            type: Sting // cloudnary URL
+            type: String // cloudnary URL
         },
         watchHistory: [
             {
-                type: Schema.Types.ObjectID,
+                type: mongoose.Schema.Types.ObjectID,
                 ref: "Video"
             }
         ],

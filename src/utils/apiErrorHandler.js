@@ -21,4 +21,4 @@ class ApiErrorHandler extends Error {
     }
 }
 
-export default ApiErrorHandler;
+export { ApiErrorHandler };
