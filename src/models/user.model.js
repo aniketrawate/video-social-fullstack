@@ -34,7 +34,7 @@ const userSchema = new mongoose.Schema(
         },
         watchHistory: [
             {
-                type: mongoose.Schema.Types.ObjectID,
+                type: mongoose.Schema.Types.ObjectId,
                 ref: "Video"
             }
         ],
@@ -49,10 +49,9 @@ const userSchema = new mongoose.Schema(
     {timestamps: true});
 
 // Hash the password before saving the user document
-userSchema.pre("save", async function (next){ // dont wrte arrow function here because we need to use this keyword.
-    if(!this.isModified("password")) return next(); // if password is not modified then we will not hash it again and just move to next middleware
+userSchema.pre("save", async function (){ // dont wrte arrow function here because we need to use this keyword.
+    if(!this.isModified("password")) return; // if password is not modified then we will not hash it again and just move to next middleware
     this.password = await bcrypt.hash(this.password, 10);
-    next();
 });
 
 // Method to compare the provided password with the hashed password in the database

@@ -39,7 +39,7 @@ const registerUser = asyncHandler( async (req, res) => {
     // we have acces of files because we are using multer middleware in the route handler for this controller. multer will parse the multipart/form-data and add the files to the req object as req.files.
     
     const avatarLocalPath = req.files?.avatar?.[0]?.path; // get the path of the uploaded avatar image from the request object in server. multer will store the uploaded file in the server's local storage and provide the path to it in req.files.avatar[0].path. we can use this path to upload the image to cloudinary.
-    const coverLocalPath = req.files?.cover?.[0]?.path; // same for above but for cover image.(not cheacking for cover image because it is optional for user registration.)
+    const coverLocalPath = req.files?.coverImage?.[0]?.path; // same for above but for cover image.(not cheacking for cover image because it is optional for user registration.)
 
     if(!avatarLocalPath) {
         throw new ApiErrorHandler(400, "Avatar image is required for user registration.");
